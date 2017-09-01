@@ -3,12 +3,16 @@ define(
 		'Magento_Checkout/js/view/payment/default',
 		'Magento_Checkout/js/model/full-screen-loader',
         'jquery',
+		'mage/url',
+		
     ],
-    function (Component, fullScreenLoader, $ ) {
+    function (Component, fullScreenLoader, $ ,url) {
    
 		'use strict';
-
-        return Component.extend({
+		 
+		var url = url.build('esewa/index/index');
+        
+		return Component.extend({
             
 			defaults: {
                 template: 'Samumaretiya_Esewa/payment/esewa-form'
@@ -17,18 +21,10 @@ define(
             getCode: function() {
                 return 'samumaretiya_esewa';
             },
-			
-			/*placeOrder: function (data, event) {
-				var self = this;
-
-				if (event) {
-					event.preventDefault();
-				}
-				$('#esewaform').submit();
+			placeOrder: function (data, event) {
 				fullScreenLoader.startLoader();
-				return false;
+				window.location.href = url;
 			},
-			*/
 		});
     }
 );

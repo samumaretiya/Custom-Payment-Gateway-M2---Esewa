@@ -10,18 +10,18 @@
         <!-- ko foreach: getRegion('messages') -->
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!--/ko-->
-    
-		<form name="esewaform" id="esewaform" method="post" action="http://esewa.com.np/epay/main">
+    	<form name="esewaform" id="esewaform" method="post" action="http://dev.esewa.com.np/epay/main">
             <input value="57" name="tAmt" type="hidden">
 			<input value="50" name="amt" type="hidden"> <!--/ total amount-->
 			<input value="2" name="txAmt" type="hidden"> <!--/ tax amount -->
 			<input value="0" name="psc" type="hidden"> <!--/ product service charge -->
 			<input value="5" name="pdc" type="hidden"> <!--/product delivery code -->
-			<input value="test" name="scd" type="hidden"> <!--/service code -->
+			<input value="BECHNUS" name="scd" type="hidden"> <!--/service code -->
 			<input value="1000001" name="pid" type="hidden"> <!--/unique id -->
 			<input value="http://google.co.in/" type="hidden" name="su">
 			<input value="http://organic-angels.23digital-prod4.com" type="hidden" name="fu">
         </form>
+		
 		<div class="checkout-agreements-block">
             <!-- ko foreach: $parent.getRegion('before-place-order') -->
             <!-- ko template: getTemplate() --><!-- /ko -->
